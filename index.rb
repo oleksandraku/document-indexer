@@ -5,13 +5,12 @@
 require 'sinatra'
 require 'yomu'
 require_relative 'DocProcesser'  
-require_relative 'IndexUpdate'
+require_relative 'IndexUpdater'
 
-get '/vendor/:vendor_id/update/:update_id/document/:doc_url' do
+get '/vendor/:vendor_id/update/:update_id/document/*' do
 
-	doc = DocProcesser.new params[:doc_url]
+	doc = DocProcesser.new "#{params[:splat].first}"
 	text = doc.getText
   	"Proccessed text: #{text}"
-
 end
 

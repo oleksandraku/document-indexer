@@ -12,13 +12,13 @@ class DocProcesser
   end
 
   def getText 
-	if(@local)
+	if @local
 	then
 		data = File.read @url
   		metadata = Yomu.read :metadata, data	
 		text = Yomu.read :text, data
 	else
-		yomu = Yomu.new @url
+		yomu = Yomu.new "http://#{@url}"
   		text = yomu.text
 	end
   end
