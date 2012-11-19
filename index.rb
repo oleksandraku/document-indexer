@@ -7,9 +7,12 @@ require 'yomu'
 require_relative 'DocProcesser'  
 require_relative 'IndexUpdater'
 
-get '/vendor/:vendor_id/update/:update_id/document/*' do
+#sinatra tends to drop one slash on double slashes such as http://sample.url -> http:/sample.url
+#Therefore, this little fix:
+set :protection, :except => :path_traversal
 
-	doc = DocProcesser.new "#{params[:splat].first}"
+get '/vendor/:vendor_id/update/:update_id/document/*' do
+	doc = DocProcesser.new params[:splat].first
 	text = doc.getText
   	"Proccessed text: #{text}"
 end

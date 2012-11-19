@@ -18,7 +18,7 @@ class DocProcesser
   		metadata = Yomu.read :metadata, data	
 		text = Yomu.read :text, data
 	else
-		yomu = Yomu.new "http://#{@url}"
+		yomu = Yomu.new @url
   		text = yomu.text
 	end
   end
