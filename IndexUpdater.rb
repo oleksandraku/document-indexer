@@ -12,7 +12,7 @@ class IndexUpdater
   end
 
   def performUpdate
-	#solr.add type: ['Update', 'ActiveRecord::Base'], class_name: 'Update', id: 'Update #{update}', text_textp: @text, vendor_id_i: @vendor
+	#solr.add type: ['Update', 'ActiveRecord::Base'], class_name: 'Update', id: 'Update #{@update}', text_textp: @text, vendor_id_i: @vendor
   end
 
 end
