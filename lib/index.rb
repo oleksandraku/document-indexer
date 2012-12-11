@@ -3,6 +3,7 @@
 # Nov. 2012
 
 require 'sinatra'
+require_relative 'airbraker'
 require_relative 'doc_processor'  
 require_relative 'index_updater'
 
@@ -14,8 +15,8 @@ get '/vendor/:vendor_id/update/:update_id/document/*' do
   a = IndexUpdater.perform_update text, params[:update_id], params[:vendor_id] 
   if a['responseHeader']['status'] == 0
 	  status HTTP_SUCCESS
-	else
-	  error HTTP_BAD_GATEWAY		
+  else
+    error HTTP_BAD_GATEWAY		
   end	
 end
 
