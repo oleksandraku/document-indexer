@@ -3,7 +3,7 @@
 #Nov. 2012
 
 require 'rsolr'
-SOLR_URL = 'http://localhost:8983/solr'
+SOLR_URL = ENV['WEBSOLR_URL'] || 'http://localhost:8983/solr'
 
 SOLR = RSolr.connect url: SOLR_URL
 
