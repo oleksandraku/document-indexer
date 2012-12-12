@@ -1,16 +1,9 @@
 #Johann Steinbrecher
 #Sourcery
 #Santa Clara 2012
-
-require File.dirname(__FILE__) +'/../lib/index'  
-require 'rspec'
-require 'rack/test'
-
-set :environment, :test
+require 'spec_helper'
 
 describe 'Document Indexer' do
-  include Rack::Test::Methods
-
   def app
     Sinatra::Application
   end
