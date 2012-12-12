@@ -10,8 +10,6 @@ GEM
     girl_friday (0.11.1)
       connection_pool (~> 0.9.0)
       rubinius-actor
-    nokogiri (1.5.5)
-    pr_geohash (1.0.0)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
@@ -34,12 +32,6 @@ GEM
       rack (~> 1.3, >= 1.3.6)
       rack-protection (~> 1.2)
       tilt (~> 1.3, >= 1.3.3)
-    sunspot (1.3.3)
-      pr_geohash (~> 1.0)
-      rsolr (~> 1.0.7)
-    sunspot_rails (1.3.3)
-      nokogiri
-      sunspot (= 1.3.3)
     tilt (1.3.3)
     yomu (0.1.4)
 
@@ -52,5 +44,4 @@ DEPENDENCIES
   rsolr
   rspec
   sinatra
-  sunspot_rails
   yomu
