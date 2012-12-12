@@ -3,7 +3,15 @@
 #Nov. 2012
 
 require 'rsolr'
-SOLR_URL = ENV['WEBSOLR_URL'] || 'http://localhost:8983/solr'
+SOLR_URL = ENV['WEBSOLR_URL'] ||
+  case ENV['RACK_ENV']
+  when 'development'
+    'http://localhost:8982/solr'
+  when 'test'
+    'http://localhost:8981/solr'
+  else
+    raise "No solr url known for #{ENV['RACK_ENV']}"
+  end
 
 SOLR = RSolr.connect url: SOLR_URL
 
