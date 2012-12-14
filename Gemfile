@@ -5,9 +5,10 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'yomu'
+gem 'yomu', github:'sourcery/yomu'
 gem 'rsolr'
 gem 'airbrake'
+gem 'calais'
 
 group :development do
   gem 'rspec'

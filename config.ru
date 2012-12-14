@@ -3,5 +3,5 @@ require 'bundler'
 
 Bundler.require
 
-require 'lib/index'
+require './lib/index'
 run Sinatra::Application
