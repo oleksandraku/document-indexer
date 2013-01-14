@@ -2,6 +2,7 @@
 Processes documents and updates a solr index.
 
 Usage:
-/vendor/{vendor_id}/update/{update_id}/document/{http://encoded.url}
+
+/attachment/{attachment_id}/document/{http://encoded.url}
 
 
