@@ -1,7 +1,3 @@
-#Johann Steinbrecher
-#Sourcery
-#Nov. 2012
-
 require 'airbrake'
 
 Airbrake.configure do |config|

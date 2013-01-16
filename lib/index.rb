@@ -1,7 +1,3 @@
-# Johann Steinbrecher
-# Sourcery
-# Nov. 2012
-
 require 'sinatra'
 require 'calais'
 require_relative 'airbraker'

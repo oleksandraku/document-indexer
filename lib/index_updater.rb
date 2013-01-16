@@ -1,7 +1,3 @@
-#Johann Steinbrecher
-#Sourcery
-#Nov. 2012
-
 require 'rsolr'
 SOLR_URL = ENV['WEBSOLR_URL'] ||
   case ENV['RACK_ENV']
@@ -18,7 +14,7 @@ SOLR = RSolr.connect url: SOLR_URL
 class IndexUpdater
   class << self
     def perform_update( text, attachment_id)
-      SOLR.add(type: ['Post', 'ActiveRecord::Base'], class_name: 'Post', id: attachment_id, text_textp: text)
+      SOLR.add(type: ['Post', 'ActiveRecord::Base'], id: attachment_id, text_textp: text)
       SOLR.commit
     end
   end
