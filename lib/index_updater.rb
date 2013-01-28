@@ -14,7 +14,7 @@ SOLR = RSolr.connect url: SOLR_URL
 class IndexUpdater
   class << self
     def perform_update( text, attachment_id)
-      SOLR.add(type: ['Post', 'ActiveRecord::Base'], id: attachment_id, text_textp: text)
+      SOLR.add(type: ['EmailAttachment', 'ActiveRecord::Base'], class_name: "EmailAttachment", id: "EmailAttachment #{attachment_id}", text_textp: text)
       SOLR.commit
     end
   end
